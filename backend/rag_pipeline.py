@@ -121,7 +121,7 @@ class RAGConfig:
     chunk_size: int = _safe_int(os.getenv("MAX_CHUNK_SIZE", "500"), 500)
     chunk_overlap: int = _safe_int(os.getenv("CHUNK_OVERLAP", "50"), 50)
     top_k: int = _safe_int(os.getenv("TOP_K_RESULTS", "5"), 5)
-    min_similarity: float = float(os.getenv("MIN_SIMILARITY", "0.25"))
+    min_similarity: float = float(os.getenv("MIN_SIMILARITY", "0.0"))
 
 
 @lru_cache(maxsize=1)
@@ -200,6 +200,15 @@ def retrieve_relevant_chunks(user_id: str, question: str, top_k: int | None = No
             filtered_docs.append(doc)
             filtered_meta.append(meta)
             filtered_dist.append(float(distance))
+
+    if not filtered_docs and documents:
+        raw_docs, raw_meta, raw_dist = documents, metadatas, distances
+        paired = list(zip(raw_docs, raw_meta, raw_dist))
+        paired.sort(key=lambda x: x[2])
+        for doc, meta, dist in paired[:3]:
+            filtered_docs.append(doc)
+            filtered_meta.append(meta)
+            filtered_dist.append(dist)
 
     return {
         "documents": [filtered_docs],

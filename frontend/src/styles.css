@@ -148,6 +148,97 @@ input {
   background: rgba(231, 76, 60, 0.2);
 }
 
+.success-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  margin-top: 1rem;
+  border-radius: 14px;
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: #7cf0a8;
+  font-size: 0.9rem;
+}
+
+.success-banner button {
+  background: transparent;
+  color: #7cf0a8;
+  padding: 0 0.4rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  min-width: 28px;
+}
+
+.success-banner button:hover {
+  background: rgba(46, 204, 113, 0.2);
+}
+
+.doc-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.doc-list li {
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(109, 124, 255, 0.15);
+  color: #9bb1ff;
+  font-size: 0.8rem;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.doc-item:hover {
+  color: #c4d0ff;
+}
+
+.doc-name {
+  font-weight: 500;
+}
+
+.doc-chunks {
+  opacity: 0.7;
+}
+
+.doc-toggle {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.doc-content {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.85rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.doc-content pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  color: #d0d8f0;
+}
+
+.doc-content em {
+  color: #8899bb;
+}
+
 @media (max-width: 640px) {
   .row {
     flex-direction: column;

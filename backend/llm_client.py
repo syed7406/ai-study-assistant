@@ -23,8 +23,9 @@ class LLMConfig:
 
 def _build_prompt(question: str, context: str) -> str:
     return (
-        "You are a study assistant. Answer the question using ONLY the context below. "
-        "If the answer is not in the context, say \"I don't know based on your documents.\"\n\n"
+        "You are a study assistant. Answer the question based on the context below. "
+        "Use the information from the context to give the best answer you can. "
+        "If the context is not relevant to the question, say \"I don't know based on your documents.\"\n\n"
         f"Context:\n{context}\n\nQuestion: {question}\nAnswer:"
     )
 
