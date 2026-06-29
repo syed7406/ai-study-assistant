@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ai-study-assistant-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: LLM_PROVIDER
+        value: ollama
+      - key: OLLAMA_BASE_URL
+        sync: false
+      - key: OLLAMA_MODEL
+        value: llama3.1:latest
+      - key: CHROMA_PERSIST_DIR
+        value: /tmp/chroma_db
+      - key: MAX_CHUNK_SIZE
+        value: 500
+      - key: CHUNK_OVERLAP
+        value: 50
+      - key: TOP_K_RESULTS
+        value: 5
+    healthCheckPath: /health
+    autoDeploy: true

@@ -1,0 +1,156 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0b1020;
+  color: #e8eefc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #17213f, #0b1020 60%);
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  background: linear-gradient(135deg, #6d7cff, #8c5cff);
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input {
+  flex: 1;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: white;
+  padding: 0.9rem 1rem;
+}
+
+.shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9bb1ff;
+  font-size: 0.8rem;
+}
+
+.lede {
+  color: #b9c5e6;
+  max-width: 60ch;
+}
+
+.card {
+  background: rgba(11, 16, 32, 0.72);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  backdrop-filter: blur(12px);
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.stack-on-mobile {
+  flex-wrap: wrap;
+}
+
+.answer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.badge.high { background: rgba(46, 204, 113, 0.2); color: #7cf0a8; }
+.badge.mid { background: rgba(241, 196, 15, 0.2); color: #ffe08a; }
+.badge.low { background: rgba(231, 76, 60, 0.2); color: #ff9f96; }
+
+.sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sources li {
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #8899bb;
+  margin: 0 0 0.5rem;
+}
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  margin-top: 1rem;
+  border-radius: 14px;
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #ff9f96;
+  font-size: 0.9rem;
+}
+
+.error-banner button {
+  background: transparent;
+  color: #ff9f96;
+  padding: 0 0.4rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  min-width: 28px;
+}
+
+.error-banner button:hover {
+  background: rgba(231, 76, 60, 0.2);
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
